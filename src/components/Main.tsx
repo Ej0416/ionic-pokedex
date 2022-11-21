@@ -24,12 +24,13 @@ export default function Main({ name, index, url, types }: Props) {
                     </p>
                 </div>
 
-                <div className="flex flex-col items-center w-max-18">
+                <div className="flex flex-col items-center w-max-18 ">
                     <p id="pokeType" className="text-gray-500">
                         {types.map((item, index) => (
-                            <p
+                            <span
+                                key={index}
                                 className={classNames(
-                                    "px-2  rounded-xl text-white capitalize",
+                                    "px-4 py-2 rounded-full text-white capitalize ml-2",
                                     {
                                         "bg-green-500":
                                             item.type.name === "grass",
@@ -71,7 +72,7 @@ export default function Main({ name, index, url, types }: Props) {
                                 )}
                             >
                                 {item.type.name}
-                            </p>
+                            </span>
                         ))}
                     </p>
                 </div>
@@ -83,7 +84,7 @@ export default function Main({ name, index, url, types }: Props) {
                     id="pokeImg"
                     src={url}
                     alt="pokemon"
-                    className="absolute -scale-x-100 inset-y-0 inset-x-0  mx-auto max-w-xs h-80"
+                    className="absolute inset-y-0 inset-x-0  mx-auto max-w-xs h-80"
                 />
             </div>
         </div>

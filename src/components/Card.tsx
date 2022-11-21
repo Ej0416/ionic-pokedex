@@ -12,7 +12,11 @@ interface Stats {
     weight: number;
     height: number;
     sprites: {
-        front_default: string;
+        other: {
+            "official-artwork": {
+                front_default: string;
+            };
+        };
     };
     types: PokemonTypes[];
     species: {
@@ -53,7 +57,7 @@ export function Card({ pokemon, index }: Props) {
             <Main
                 name={pokemon.name}
                 index={index}
-                url={pokeStats.sprites.front_default}
+                url={pokeStats.sprites.other["official-artwork"].front_default}
                 types={pokeStats.types}
             />
             <Info

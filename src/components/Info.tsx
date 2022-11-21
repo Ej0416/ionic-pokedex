@@ -95,7 +95,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
             >
                 {/* for about stats */}
                 {activeTab === Tabs.About && (
-                    <div id="about" className="pb-4 px-8">
+                    <div id="about" className="py-4 px-8">
                         <p className="text-justify text-gray-300 text-md">
                             {
                                 pokeInfo.flavor_text_entries.find(
@@ -142,6 +142,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                                 >
                                     {pokeInfo.habitat.name}
                                 </h2>
+
                                 <p
                                     id="pokeNum"
                                     className="text-gray-500 text-base"
@@ -152,10 +153,12 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div className="flex flex-col items-center w-max-18">
                                 <h2
                                     id="pokeName"
-                                    className="text-lg font-bold text-white capitalize"
+                                    className="text-md font-bold text-white capitalize"
                                 >
                                     {ability.map((item, index) => (
-                                        <p>{item.ability.name}</p>
+                                        <span className="block" key={index}>
+                                            {item.ability.name}
+                                        </span>
                                     ))}
                                 </h2>
                                 <p
@@ -177,8 +180,8 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                         </h1>
 
                         <div className="flex flex-col">
-                            {stats.map((item) => (
-                                <div className="flex">
+                            {stats.map((item, index) => (
+                                <div className="flex" key={index}>
                                     <div className="w-1/2 flex justify-between text-right">
                                         <span className="capitalize text-yellow-300">
                                             {item.stat.name}

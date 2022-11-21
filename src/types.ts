@@ -22,3 +22,9 @@ export interface PokeStat {
         name: string;
     };
 }
+
+export interface PokeImg {
+    dream_world: {
+        front_default: string;
+    };
+}
