@@ -49,7 +49,7 @@ export function Card({ pokemon, index }: Props) {
     }
 
     return (
-        <div>
+        <div className="bg-grayishBlack">
             <Main
                 name={pokemon.name}
                 index={index}

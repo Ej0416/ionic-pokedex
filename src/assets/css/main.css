@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --ion-dark-custom: hsl(0, 0%, 15%);
+}
+
+.ion-color-darkBg {
+    --ion-color-base: var(--ion-dark-custom);
+}
+
 body {
     background-color: hsl(0, 0%, 22%);
 }

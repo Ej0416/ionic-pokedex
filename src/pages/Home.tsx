@@ -37,7 +37,7 @@ export default function Home() {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar className="bg-grayishBlack">
+                <IonToolbar color="darkBg">
                     <Header />
                 </IonToolbar>
             </IonHeader>

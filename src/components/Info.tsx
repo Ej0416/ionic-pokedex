@@ -55,10 +55,8 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
         return null;
     }
 
-    console.log(pokeInfo);
-
     return (
-        <div className="mt-[350px] pt-4">
+        <div className="mt-[340px] pt-2">
             <div className="flex justify-between">
                 <IonButton
                     fill="clear"
@@ -93,7 +91,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
 
             <div
                 id="info-content"
-                className="bg-grayishDarkBlack px-4 w-screen pt-2"
+                className="bg-grayishDarkBlack px-4 w-screen"
             >
                 {/* for about stats */}
                 {activeTab === Tabs.About && (
@@ -140,7 +138,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div>
                                 <h2
                                     id="pokeName"
-                                    className="text-2xl font-bold text-white capitalize"
+                                    className="text-lg font-bold text-white capitalize"
                                 >
                                     {pokeInfo.habitat.name}
                                 </h2>
@@ -154,7 +152,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div className="flex flex-col items-center w-max-18">
                                 <h2
                                     id="pokeName"
-                                    className="text-xl font-bold text-white capitalize"
+                                    className="text-lg font-bold text-white capitalize"
                                 >
                                     {ability.map((item, index) => (
                                         <p>{item.ability.name}</p>
@@ -173,7 +171,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
 
                 {/* for stats tab */}
                 {activeTab === Tabs.Stat && (
-                    <div id="stat" className="py-6 px-4">
+                    <div id="stat" className="py-8 px-4">
                         <h1 className="text-white text-xl font-bold mb-2">
                             Base Stat
                         </h1>
@@ -181,7 +179,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                         <div className="flex flex-col">
                             {stats.map((item) => (
                                 <div className="flex">
-                                    <div className="w-2/5 flex justify-between text-right">
+                                    <div className="w-1/2 flex justify-between text-right">
                                         <span className="capitalize text-yellow-300">
                                             {item.stat.name}
                                         </span>
@@ -191,7 +189,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="w-3/5 mt-2">
+                                    <div className="w-1/2 mt-2">
                                         {" "}
                                         <IonProgressBar
                                             value={item.base_stat / 100}
