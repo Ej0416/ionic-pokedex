@@ -174,7 +174,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
 
                 {/* for stats tab */}
                 {activeTab === Tabs.Stat && (
-                    <div id="stat" className="py-8 px-4">
+                    <div id="stat" className="py-12 px-4">
                         <h1 className="text-white text-xl font-bold mb-2">
                             Base Stat
                         </h1>
