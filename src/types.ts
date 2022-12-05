@@ -23,8 +23,22 @@ export interface PokeStat {
     };
 }
 
-export interface PokeImg {
-    dream_world: {
-        front_default: string;
+export interface Stats {
+    id: string;
+    name: string;
+    weight: number;
+    height: number;
+    sprites: {
+        other: {
+            "official-artwork": {
+                front_default: string;
+            };
+        };
     };
+    types: PokemonTypes[];
+    species: {
+        url: string;
+    };
+    abilities: PokeAbility[];
+    stats: PokeStat[];
 }

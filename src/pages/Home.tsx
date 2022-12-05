@@ -7,8 +7,9 @@ import {
     IonToolbar,
 } from "@ionic/react";
 import { useEffect, useState } from "react";
-import { Card } from "../components/Card";
 import Header from "../components/Header";
+import { PokeData } from "../components/PokeData";
+import SearchModal from "../components/SearchModal";
 import { Pokemon } from "../types";
 
 export default function Home() {
@@ -43,7 +44,11 @@ export default function Home() {
             </IonHeader>
             <IonContent fullscreen>
                 {items.map((item, index) => (
-                    <Card key={index} pokemon={item} index={`${index + 1}`} />
+                    <PokeData
+                        key={index}
+                        pokemon={item}
+                        index={`${index + 1}`}
+                    />
                 ))}
                 <IonInfiniteScroll
                     onIonInfinite={(ev) => {
@@ -54,6 +59,7 @@ export default function Home() {
                     <IonInfiniteScrollContent></IonInfiniteScrollContent>
                 </IonInfiniteScroll>
             </IonContent>
+            <SearchModal />
         </IonPage>
     );
 }

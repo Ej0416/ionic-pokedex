@@ -56,7 +56,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
     }
 
     return (
-        <div className="mt-[340px] pt-2">
+        <div className="pt-2 h-1/2">
             <div className="flex justify-between">
                 <IonButton
                     fill="clear"
@@ -91,12 +91,12 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
 
             <div
                 id="info-content"
-                className="bg-grayishDarkBlack px-4 w-screen"
+                className="bg-grayishDarkBlack h-full px-4 w-screen pt-10 "
             >
                 {/* for about stats */}
                 {activeTab === Tabs.About && (
                     <div id="about" className="py-4 px-8">
-                        <p className="text-justify text-gray-300 text-md">
+                        <p className="text-justify text-gray-300 text-sm">
                             {
                                 pokeInfo.flavor_text_entries.find(
                                     (item) => item.language.name === "en"
@@ -107,7 +107,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div>
                                 <h2
                                     id="pokeName"
-                                    className="text-2xl font-bold text-white"
+                                    className="text-2md font-bold text-yellow-300"
                                 >
                                     {`${height / 10} m`}
                                 </h2>
@@ -121,7 +121,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div className="flex flex-col items-center w-max-18 ">
                                 <h2
                                     id="pokeName"
-                                    className="text-2xl font-bold text-white"
+                                    className="text-2md font-bold text-yellow-300"
                                 >
                                     {`${weight / 10} kg`}
                                 </h2>
@@ -138,9 +138,11 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div>
                                 <h2
                                     id="pokeName"
-                                    className="text-lg font-bold text-white capitalize"
+                                    className="text-md text-center font-bold text-sky-300 capitalize"
                                 >
-                                    {pokeInfo.habitat.name}
+                                    {pokeInfo.habitat
+                                        ? pokeInfo.habitat.name
+                                        : "Unknown"}
                                 </h2>
 
                                 <p
@@ -153,7 +155,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                             <div className="flex flex-col items-center w-max-18">
                                 <h2
                                     id="pokeName"
-                                    className="text-md font-bold text-white capitalize"
+                                    className="text-sm text-center font-bold text-sky-300 capitalize"
                                 >
                                     {ability.map((item, index) => (
                                         <span className="block" key={index}>
@@ -182,7 +184,7 @@ export function Info({ weight, height, infoUrl, ability, stats }: Props) {
                         <div className="flex flex-col">
                             {stats.map((item, index) => (
                                 <div className="flex" key={index}>
-                                    <div className="w-1/2 flex justify-between text-right">
+                                    <div className="w-1/2 flex justify-between text-right text-sm">
                                         <span className="capitalize text-yellow-300">
                                             {item.stat.name}
                                         </span>

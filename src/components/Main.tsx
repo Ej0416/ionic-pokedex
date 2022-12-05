@@ -10,12 +10,12 @@ interface Props {
 
 export default function Main({ name, index, url, types }: Props) {
     return (
-        <div className="">
-            <div className="flex justify-between items-center px-4">
+        <div className="h-1/2">
+            <div className="flex justify-between items-center px-4 pt-4">
                 <div>
                     <h2
                         id="pokeName"
-                        className="text-2xl font-bold text-white capitalize"
+                        className="text-2xl font-bold text-rose-400 capitalize"
                     >
                         {name}
                     </h2>
@@ -79,12 +79,12 @@ export default function Main({ name, index, url, types }: Props) {
             </div>
 
             <div className="relative">
-                <div className="bg-yellow-200 w-80 h-80 absolute inset-y-0 inset-x-0 rounded-full  mx-auto"></div>
+                <div className="bg-yellow-200 w-[250px] h-[250px] absolute inset-y-0 inset-x-0 rounded-full  mx-auto"></div>
                 <img
                     id="pokeImg"
                     src={url}
                     alt="pokemon"
-                    className="absolute inset-y-0 inset-x-0  mx-auto max-w-xs h-80"
+                    className="absolute inset-y-0 inset-x-0  mx-auto max-w-xs h-[250px]"
                 />
             </div>
         </div>
